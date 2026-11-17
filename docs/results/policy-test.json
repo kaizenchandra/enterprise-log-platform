@@ -1,0 +1,8 @@
+{
+  "notification": "one durable outbox record delivered to local synthetic receiver",
+  "hot_legal_hold": "preserved synthetic old record",
+  "hot_retention": "deleted expired record",
+  "retention_default": "restored to 30 days",
+  "alert": "fired once",
+  "deduplication": "no repeated FIRING transition on next evaluation"
+}

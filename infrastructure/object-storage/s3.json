@@ -1,0 +1,20 @@
+{
+  "identities": [
+    {
+      "name": "log-platform",
+      "credentials": [
+        {
+          "accessKey": "local-archive",
+          "secretKey": "local-archive-password"
+        }
+      ],
+      "actions": [
+        "Admin",
+        "Read",
+        "Write",
+        "List",
+        "Tagging"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "requests": 30,
+  "concurrency": 1,
+  "query": "tenant + one-hour range + full-text unique marker; warm local index",
+  "matching_events": 1,
+  "p50_ms": 10.53052099996421,
+  "p95_ms": 15.127708000363782,
+  "max_ms": 208.52150000064285,
+  "claim": "small serial sample, not a loaded-query SLO or cluster capacity benchmark"
+}

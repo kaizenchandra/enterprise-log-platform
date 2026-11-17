@@ -1,0 +1,44 @@
+{
+  "checks": [
+    "OTLP Collector to searchable trace-correlated log",
+    "unauthorized search",
+    "invalid ingestion credential",
+    "source identity forgery",
+    "viewer cannot register source",
+    "forged JWT rejected",
+    "range budget",
+    "raw DSL rejected",
+    "oversize payload",
+    "durable ingest boundary",
+    "duplicate and redaction",
+    "cross tenant search",
+    "buffer before broker recreation",
+    "broker recreation retained unindexed Kafka records",
+    "accept during search outage",
+    "worker crash and storage outage recovery",
+    "broker outage fails closed",
+    "broker restored accepts retry"
+  ],
+  "benchmark": {
+    "offered_events": 2000,
+    "accepted_events": 2000,
+    "searchable_events": 2000,
+    "clients": 4,
+    "batch_size": 100,
+    "ack_seconds": 0.2597733749989857,
+    "until_searchable_seconds": 1.333063541998854,
+    "accepted_events_per_second": 7699.01842329996,
+    "ack_ms_p50": 46.97074999967299,
+    "ack_ms_p95": 65.44908400064742,
+    "ack_ms_max": 73.66991699927894,
+    "workload": "closed loop, synthetic short messages, one tenant, local Docker; not a capacity limit or SLO proof"
+  },
+  "query_benchmark": {
+    "requests": 30,
+    "concurrency": 1,
+    "query": "full-text marker + tenant + time range, 100 results",
+    "p50_ms": 12.272666500393825,
+    "p95_ms": 21.797583000079612,
+    "max_ms": 40.187291999245645
+  }
+}

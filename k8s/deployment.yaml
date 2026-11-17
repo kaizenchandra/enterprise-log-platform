@@ -1,0 +1,42 @@
+# Application baseline only. Requires externally operated PostgreSQL, Kafka, OpenSearch and OIDC.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: log-platform }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: log-platform } }
+  template:
+    metadata: { labels: { app: log-platform } }
+    spec:
+      terminationGracePeriodSeconds: 45
+      securityContext: { runAsNonRoot: true, runAsUser: 10001 }
+      containers:
+        - name: backend
+          image: log-platform:1.0.0
+          ports: [ { containerPort: 8080 } ]
+          envFrom: [ { secretRef: { name: log-platform-runtime } } ]
+          resources:
+            requests: { cpu: 500m, memory: 512Mi }
+            limits: { cpu: '2', memory: 1Gi }
+          readinessProbe: { httpGet: { path: /actuator/health, port: 8080 }, initialDelaySeconds: 30 }
+          livenessProbe: { tcpSocket: { port: 8080 }, initialDelaySeconds: 60 }
+          securityContext: { allowPrivilegeEscalation: false, capabilities: { drop: [ ALL ] } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: log-platform }
+spec: { selector: { app: log-platform }, ports: [ { port: 8080, targetPort: 8080 } ] }
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: { name: log-platform }
+spec: { minAvailable: 1, selector: { matchLabels: { app: log-platform } } }
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: { name: log-platform }
+spec:
+  scaleTargetRef: { apiVersion: apps/v1, kind: Deployment, name: log-platform }
+  minReplicas: 2
+  maxReplicas: 6
+  metrics: [ { type: Resource, resource: { name: cpu, target: { type: Utilization, averageUtilization: 65 } } } ]

@@ -1,0 +1,2 @@
+Duplicate delivery: one indexed document
+Authenticated SSE: heartbeat received

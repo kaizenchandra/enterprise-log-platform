@@ -1,0 +1,9 @@
+{
+  "archive_events": 1,
+  "cross_tenant_restore": "denied",
+  "viewer_archive": "denied",
+  "hot_test_document_deleted": 1,
+  "restored_searchable_events": 1,
+  "archive_deleted": true,
+  "integrity": "compressed SHA-256 checked during restore"
+}

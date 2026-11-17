@@ -1,0 +1,46 @@
+server:
+  shutdown: graceful
+  tomcat:
+    max-http-form-post-size: 2MB
+spring:
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/logs}
+    username: ${DATABASE_USER:logs}
+    password: ${DATABASE_PASSWORD:local-only}
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      properties:
+        enable.idempotence: true
+        linger.ms: 0
+        batch.size: 16384
+        compression.type: none
+        max.block.ms: 2000
+        delivery.timeout.ms: 10000
+        request.timeout.ms: 5000
+        buffer.memory: 33554432
+    consumer:
+      group-id: log-indexer-v1
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      max-poll-records: 100
+      properties:
+        metadata.max.age.ms: 10000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      ack-mode: batch
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+platform:
+  search-url: ${SEARCH_URL:http://localhost:9200}
+  worker: ${WORKER_ENABLED:true}

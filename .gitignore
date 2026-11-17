@@ -1,0 +1,8 @@
+**/target/
+**/node_modules/
+**/.next/
+**/*.tsbuildinfo
+.env
+frontend/test-results/
+frontend/playwright-report/
+**/__pycache__/

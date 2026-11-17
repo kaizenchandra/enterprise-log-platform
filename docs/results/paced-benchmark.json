@@ -1,0 +1,787 @@
+{
+  "workload": "rate-paced local Docker; 500-character messages plus envelope; one tenant; 50 events/batch; <=8 HTTP workers including query probe",
+  "offered_events": 30000,
+  "target_events_per_second": 1000,
+  "duration_target_seconds": 30,
+  "elapsed_seconds": 36.90983037499973,
+  "accepted_events": 30000,
+  "searchable_events_after_drain": 30000,
+  "accepted_events_per_second": 812.7915976639115,
+  "all_searchable_after_seconds": 37.01783875000001,
+  "http_statuses": {
+    "202": 600
+  },
+  "ack_ms": {
+    "p50": 9.216917000230751,
+    "p95": 15.418290999150486,
+    "p99": 23.295875000258093,
+    "max": 33.53333300037775
+  },
+  "concurrent_search": {
+    "requests": 30,
+    "successful_complete": 30,
+    "p50_ms": 39.04316700027266,
+    "p95_ms": 54.80158299906179,
+    "max_ms": 92.42379200077266
+  },
+  "resource_samples": [
+    {
+      "elapsed_seconds": 2.375113833000796,
+      "containers": [
+        {
+          "BlockIO": "59.1MB / 0B",
+          "CPUPerc": "74.19%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "4.97%",
+          "MemUsage": "446.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "5.05MB / 5.18MB",
+          "PIDs": "58"
+        },
+        {
+          "BlockIO": "960MB / 13.5MB",
+          "CPUPerc": "0.02%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.55%",
+          "MemUsage": "49.23MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.32MB / 1.11MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.74%",
+          "MemUsage": "67MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.11%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.66%",
+          "MemUsage": "329.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "761kB / 1.5MB",
+          "PIDs": "165"
+        },
+        {
+          "BlockIO": "175MB / 55.6MB",
+          "CPUPerc": "5.84%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.34%",
+          "MemUsage": "840.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "39.4MB / 41.8MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "418MB / 18.9MB",
+          "CPUPerc": "0.13%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.56%",
+          "MemUsage": "589.9MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.1kB / 141kB",
+          "PIDs": "65"
+        },
+        {
+          "BlockIO": "494MB / 3.8MB",
+          "CPUPerc": "0.06%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.46%",
+          "MemUsage": "41.36MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "479MB / 239MB",
+          "CPUPerc": "29.12%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "12.95%",
+          "MemUsage": "1.138GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "64.6MB / 26MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.10%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.20%",
+          "MemUsage": "377.7MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "761kB / 1.49MB",
+          "PIDs": "174"
+        },
+        {
+          "BlockIO": "83.3MB / 6MB",
+          "CPUPerc": "0.15%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "4.12%",
+          "MemUsage": "370.6MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "222kB / 431kB",
+          "PIDs": "194"
+        },
+        {
+          "BlockIO": "327MB / 109MB",
+          "CPUPerc": "0.85%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.35%",
+          "MemUsage": "31.48MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "1.89MB / 1.47MB",
+          "PIDs": "16"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 8.517323541000223,
+      "containers": [
+        {
+          "BlockIO": "59.4MB / 0B",
+          "CPUPerc": "58.05%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "5.04%",
+          "MemUsage": "453.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "15.5MB / 16.1MB",
+          "PIDs": "57"
+        },
+        {
+          "BlockIO": "960MB / 13.5MB",
+          "CPUPerc": "0.06%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.53%",
+          "MemUsage": "48MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.34MB / 1.12MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.76%",
+          "MemUsage": "68.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.26%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.67%",
+          "MemUsage": "329.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "763kB / 1.5MB",
+          "PIDs": "169"
+        },
+        {
+          "BlockIO": "176MB / 61.6MB",
+          "CPUPerc": "8.81%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.33%",
+          "MemUsage": "839.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "45.4MB / 48MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "418MB / 19MB",
+          "CPUPerc": "0.23%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.54%",
+          "MemUsage": "588.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.2kB / 141kB",
+          "PIDs": "65"
+        },
+        {
+          "BlockIO": "494MB / 3.8MB",
+          "CPUPerc": "0.15%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.41%",
+          "MemUsage": "36.6MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "487MB / 252MB",
+          "CPUPerc": "20.70%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "12.99%",
+          "MemUsage": "1.141GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "70.8MB / 28.2MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.26%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.20%",
+          "MemUsage": "378MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "762kB / 1.49MB",
+          "PIDs": "177"
+        },
+        {
+          "BlockIO": "83.3MB / 6MB",
+          "CPUPerc": "0.33%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "4.13%",
+          "MemUsage": "371.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "223kB / 435kB",
+          "PIDs": "197"
+        },
+        {
+          "BlockIO": "328MB / 111MB",
+          "CPUPerc": "1.56%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.33%",
+          "MemUsage": "29.43MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "1.96MB / 1.52MB",
+          "PIDs": "16"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 14.588244624999788,
+      "containers": [
+        {
+          "BlockIO": "59.4MB / 0B",
+          "CPUPerc": "41.52%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "5.29%",
+          "MemUsage": "475.6MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "30.1MB / 31.1MB",
+          "PIDs": "56"
+        },
+        {
+          "BlockIO": "960MB / 13.5MB",
+          "CPUPerc": "0.02%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.53%",
+          "MemUsage": "48MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.35MB / 1.13MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.76%",
+          "MemUsage": "68.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.14%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.67%",
+          "MemUsage": "330.3MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "765kB / 1.51MB",
+          "PIDs": "173"
+        },
+        {
+          "BlockIO": "182MB / 61.7MB",
+          "CPUPerc": "8.49%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.44%",
+          "MemUsage": "849.7MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "51.3MB / 54.2MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "418MB / 19MB",
+          "CPUPerc": "0.23%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.54%",
+          "MemUsage": "588.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.2kB / 141kB",
+          "PIDs": "65"
+        },
+        {
+          "BlockIO": "497MB / 3.8MB",
+          "CPUPerc": "0.05%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.41%",
+          "MemUsage": "36.91MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "491MB / 262MB",
+          "CPUPerc": "24.35%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "12.99%",
+          "MemUsage": "1.141GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "76.9MB / 30.4MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.16%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.20%",
+          "MemUsage": "378.3MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "764kB / 1.5MB",
+          "PIDs": "179"
+        },
+        {
+          "BlockIO": "83.3MB / 6MB",
+          "CPUPerc": "0.23%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "4.12%",
+          "MemUsage": "371MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "225kB / 439kB",
+          "PIDs": "200"
+        },
+        {
+          "BlockIO": "331MB / 112MB",
+          "CPUPerc": "1.12%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.33%",
+          "MemUsage": "29.32MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "2MB / 1.55MB",
+          "PIDs": "16"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 20.68080445800115,
+      "containers": [
+        {
+          "BlockIO": "59.4MB / 0B",
+          "CPUPerc": "26.29%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "5.06%",
+          "MemUsage": "455MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "40.4MB / 41.8MB",
+          "PIDs": "56"
+        },
+        {
+          "BlockIO": "966MB / 13.5MB",
+          "CPUPerc": "0.06%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.53%",
+          "MemUsage": "48.11MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.36MB / 1.14MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.76%",
+          "MemUsage": "68.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.19%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.67%",
+          "MemUsage": "330.4MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "767kB / 1.51MB",
+          "PIDs": "176"
+        },
+        {
+          "BlockIO": "182MB / 61.8MB",
+          "CPUPerc": "8.21%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.42%",
+          "MemUsage": "847.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "57.3MB / 60.4MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "431MB / 19MB",
+          "CPUPerc": "0.23%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.56%",
+          "MemUsage": "590.5MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.2kB / 141kB",
+          "PIDs": "72"
+        },
+        {
+          "BlockIO": "505MB / 3.8MB",
+          "CPUPerc": "0.05%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.41%",
+          "MemUsage": "37.22MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "508MB / 272MB",
+          "CPUPerc": "21.48%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "13.01%",
+          "MemUsage": "1.143GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "83MB / 32.5MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.20%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.21%",
+          "MemUsage": "379MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "766kB / 1.5MB",
+          "PIDs": "182"
+        },
+        {
+          "BlockIO": "83.3MB / 6MB",
+          "CPUPerc": "0.29%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "4.13%",
+          "MemUsage": "371.9MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "227kB / 442kB",
+          "PIDs": "203"
+        },
+        {
+          "BlockIO": "331MB / 114MB",
+          "CPUPerc": "2.76%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.33%",
+          "MemUsage": "29.34MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "2.06MB / 1.6MB",
+          "PIDs": "16"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 26.805087791000915,
+      "containers": [
+        {
+          "BlockIO": "59.4MB / 0B",
+          "CPUPerc": "33.85%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "5.07%",
+          "MemUsage": "456MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "54.9MB / 56.9MB",
+          "PIDs": "56"
+        },
+        {
+          "BlockIO": "966MB / 13.5MB",
+          "CPUPerc": "0.07%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.53%",
+          "MemUsage": "48.11MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.37MB / 1.15MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.76%",
+          "MemUsage": "68.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.57%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.68%",
+          "MemUsage": "330.9MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "769kB / 1.51MB",
+          "PIDs": "179"
+        },
+        {
+          "BlockIO": "182MB / 61.9MB",
+          "CPUPerc": "7.58%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.42%",
+          "MemUsage": "847.3MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "63.2MB / 66.6MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "431MB / 19MB",
+          "CPUPerc": "0.20%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.55%",
+          "MemUsage": "589.6MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.2kB / 141kB",
+          "PIDs": "72"
+        },
+        {
+          "BlockIO": "532MB / 3.8MB",
+          "CPUPerc": "0.00%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.43%",
+          "MemUsage": "38.82MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "509MB / 311MB",
+          "CPUPerc": "26.91%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "13.02%",
+          "MemUsage": "1.144GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "89.2MB / 34.7MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.20%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.21%",
+          "MemUsage": "378.5MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "768kB / 1.5MB",
+          "PIDs": "185"
+        },
+        {
+          "BlockIO": "83.3MB / 6MB",
+          "CPUPerc": "0.26%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "4.13%",
+          "MemUsage": "371.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "229kB / 446kB",
+          "PIDs": "206"
+        },
+        {
+          "BlockIO": "332MB / 116MB",
+          "CPUPerc": "1.14%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.33%",
+          "MemUsage": "29.33MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "2.12MB / 1.64MB",
+          "PIDs": "16"
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 32.90862583300077,
+      "containers": [
+        {
+          "BlockIO": "59.4MB / 0B",
+          "CPUPerc": "0.84%",
+          "Container": "f4b515d140a40fd6c581ecdaad685ed2331ffa6a3a1e668f85a0028f7963163f",
+          "ID": "f4b515d140a4",
+          "MemPerc": "5.06%",
+          "MemUsage": "454.9MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-api-1",
+          "NetIO": "61.6MB / 63.8MB",
+          "PIDs": "55"
+        },
+        {
+          "BlockIO": "974MB / 13.5MB",
+          "CPUPerc": "0.11%",
+          "Container": "8c4d72ea219a3a561cb9090fbb7627181c8965e76e528d556defc80f5375558b",
+          "ID": "8c4d72ea219a",
+          "MemPerc": "0.53%",
+          "MemUsage": "48.12MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-collector-1",
+          "NetIO": "1.39MB / 1.16MB",
+          "PIDs": "16"
+        },
+        {
+          "BlockIO": "248MB / 623kB",
+          "CPUPerc": "0.00%",
+          "Container": "42b52d2c9486daba1de9ad2d2644d99a4ec7a9ab90677d330976c44a654458f8",
+          "ID": "42b52d2c9486",
+          "MemPerc": "0.76%",
+          "MemUsage": "68.8MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-frontend-1",
+          "NetIO": "453kB / 370kB",
+          "PIDs": "22"
+        },
+        {
+          "BlockIO": "26.5MB / 57.4MB",
+          "CPUPerc": "0.44%",
+          "Container": "527dbb7af638683452e95eb58a3e833c407baa804d93ea3e2b1b8f89349cb1e2",
+          "ID": "527dbb7af638",
+          "MemPerc": "3.68%",
+          "MemUsage": "331.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-inventory-service-1",
+          "NetIO": "771kB / 1.52MB",
+          "PIDs": "180"
+        },
+        {
+          "BlockIO": "182MB / 62.1MB",
+          "CPUPerc": "2.87%",
+          "Container": "88878b2316f7cbc14b66bf2d9760b71d40aab90d7698cec0f82b0a37b15a6b08",
+          "ID": "88878b2316f7",
+          "MemPerc": "9.43%",
+          "MemUsage": "848.1MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-kafka-1",
+          "NetIO": "66.3MB / 69.9MB",
+          "PIDs": "111"
+        },
+        {
+          "BlockIO": "431MB / 19MB",
+          "CPUPerc": "0.49%",
+          "Container": "87f3753742027b2e37b383447858b9f261869da39881eaa9b443de619ecd04c7",
+          "ID": "87f375374202",
+          "MemPerc": "6.55%",
+          "MemUsage": "589.5MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-keycloak-1",
+          "NetIO": "61.2kB / 141kB",
+          "PIDs": "72"
+        },
+        {
+          "BlockIO": "532MB / 3.8MB",
+          "CPUPerc": "0.19%",
+          "Container": "6a960e2d51e927d0ddf5b7137ba41565f43849a97958e4092a192bd195989626",
+          "ID": "6a960e2d51e9",
+          "MemPerc": "0.43%",
+          "MemUsage": "38.54MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-object-storage-1",
+          "NetIO": "27.2kB / 6.71kB",
+          "PIDs": "13"
+        },
+        {
+          "BlockIO": "509MB / 317MB",
+          "CPUPerc": "5.84%",
+          "Container": "ccc8c815dce9d3689baa0175cd2bc80a93720ffe9ccee6e728bfd0cd81109f98",
+          "ID": "ccc8c815dce9",
+          "MemPerc": "13.01%",
+          "MemUsage": "1.143GiB / 8.787GiB",
+          "Name": "enterprise-log-platform-opensearch-1",
+          "NetIO": "92.5MB / 35.9MB",
+          "PIDs": "117"
+        },
+        {
+          "BlockIO": "45.2MB / 127kB",
+          "CPUPerc": "0.46%",
+          "Container": "4dee04f81da5695f31be3af57db5f7044e264dca9636b0cb478d8886b4c82268",
+          "ID": "4dee04f81da5",
+          "MemPerc": "4.21%",
+          "MemUsage": "379.2MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-order-service-1",
+          "NetIO": "770kB / 1.51MB",
+          "PIDs": "186"
+        },
+        {
+          "BlockIO": "83.4MB / 6MB",
+          "CPUPerc": "0.25%",
+          "Container": "859c5cee59810d8c0a8ff9f6c7fbd6d9945a20a2e8cdbf2e13ec958a0bd791d1",
+          "ID": "859c5cee5981",
+          "MemPerc": "3.98%",
+          "MemUsage": "358.4MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-payment-service-1",
+          "NetIO": "231kB / 451kB",
+          "PIDs": "51"
+        },
+        {
+          "BlockIO": "332MB / 117MB",
+          "CPUPerc": "0.23%",
+          "Container": "c6a831fa8175c0d96d1f68f1f2b5badd27c6ce7ce7f49f306b7d9d172931cdf0",
+          "ID": "c6a831fa8175",
+          "MemPerc": "0.33%",
+          "MemUsage": "29.79MiB / 8.787GiB",
+          "Name": "enterprise-log-platform-postgres-1",
+          "NetIO": "2.15MB / 1.66MB",
+          "PIDs": "16"
+        }
+      ]
+    }
+  ],
+  "limitations": "One short local workload, no maximum-throughput claim. Search reconciliation is after drain, not per-event p95 visibility lag. No replication/AZ/GC/storage amplification evidence. Coarse CPU/memory snapshots are not profiles.",
+  "observation_window_note": "This executed revision measured elapsed through resource/probe completion. Its reported 812.79 events/sec is over that full 36.91-second observation window, not the configured 1,000/sec offer pacing or maximum sustainable throughput. Separate ack-only workload timing was not captured in this run; the script now captures it for future runs."
+}

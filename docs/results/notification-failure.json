@@ -1,0 +1,7 @@
+{
+  "receiver_outage": "observed failed attempt",
+  "durable_retry": "delivered after receiver restart",
+  "same_notification_id": true,
+  "outbox_rows": 1,
+  "attempts": 2
+}

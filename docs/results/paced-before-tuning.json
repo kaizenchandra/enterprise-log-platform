@@ -1,0 +1,28 @@
+{
+  "workload": "rate-paced local Docker; 500-character messages plus envelope; one tenant; 50 events/batch; <=8 HTTP workers including query probe",
+  "offered_events": 30000,
+  "target_events_per_second": 1000,
+  "duration_target_seconds": 30,
+  "elapsed_seconds": 31.135843332998775,
+  "accepted_events": 30000,
+  "searchable_events_after_drain": 30000,
+  "accepted_events_per_second": 963.5197505058431,
+  "all_searchable_after_seconds": 31.264658750000308,
+  "http_statuses": {
+    "202": 600
+  },
+  "ack_ms": {
+    "p50": 76.26970800083654,
+    "p95": 107.84604099899298,
+    "p99": 135.46491700071783,
+    "max": 187.2267920007289
+  },
+  "concurrent_search": {
+    "requests": 30,
+    "successful_complete": 30,
+    "p50_ms": 33.591791998333065,
+    "p95_ms": 47.85408300085692,
+    "max_ms": 53.907792000245536
+  },
+  "limitations": "One short local workload, no maximum-throughput claim. Search reconciliation is after drain, not per-event p95 visibility lag. No replication/AZ/GC/CPU/storage amplification evidence."
+}
